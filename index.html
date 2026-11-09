@@ -1,0 +1,420 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Aakash Suresh</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark lab bench. Each discipline owns a signal colour (teal = test, coral = CAD, amber = sensing, violet = embedded, lime = fluidics) and that colour follows it through the page. */
+:root{
+  --bg:#0B1220;
+  --bg2:#111B2E;
+  --card:#15213A;
+  --ink:#EEF3FA;
+  --muted:#9AA9C2;
+  --line:#25344F;
+  --teal:#2DD4BF;
+  --coral:#FF7A59;
+  --amber:#FBBF24;
+  --violet:#A78BFA;
+  --lime:#A3E635;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  --bg:#F5F7FC;--bg2:#E9EEF8;--card:#FFFFFF;--ink:#101A2E;--muted:#55627A;--line:#D5DDEB;
+  --teal:#0E9F8E;--coral:#E2522F;--amber:#B7791F;--violet:#7155E0;--lime:#5E9A0E;color-scheme:light}}
+:root[data-theme="light"]{
+  --bg:#F5F7FC;--bg2:#E9EEF8;--card:#FFFFFF;--ink:#101A2E;--muted:#55627A;--line:#D5DDEB;
+  --teal:#0E9F8E;--coral:#E2522F;--amber:#B7791F;--violet:#7155E0;--lime:#5E9A0E;color-scheme:light}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;position:relative}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.08}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Nav */
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;flex-wrap:wrap}
+.logo{font-family:var(--f-display);font-weight:800;font-size:18px;text-decoration:none}
+.logo span{color:var(--coral)}
+nav ul{list-style:none;display:flex;gap:6px;margin:0;padding:0;flex-wrap:wrap}
+nav a.nl{text-decoration:none;font-size:14px;color:var(--muted);padding:6px 12px;border-radius:999px}
+nav a.nl:hover{color:var(--ink);background:var(--card)}
+
+/* Hero */
+.hero{position:relative;padding-block:56px 64px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:center}
+.blobs{position:absolute;inset:-40px -10% auto auto;width:70%;height:520px;pointer-events:none;z-index:0;filter:blur(60px);opacity:.45}
+.blobs i{position:absolute;border-radius:50%}
+.blobs i:nth-child(1){width:280px;height:280px;background:var(--teal);right:10%;top:20px}
+.blobs i:nth-child(2){width:240px;height:240px;background:var(--coral);right:38%;top:140px}
+.blobs i:nth-child(3){width:200px;height:200px;background:var(--violet);right:2%;top:240px}
+.hero > *{position:relative;z-index:1}
+.status{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:13px}
+.status b{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px color-mix(in srgb,var(--lime) 25%,transparent)}
+h1{font-size:clamp(44px,8vw,92px);font-weight:800;letter-spacing:-.02em;margin-top:22px}
+h1 .grad{background:linear-gradient(90deg,var(--teal),var(--amber) 55%,var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:clamp(17px,2.2vw,21px);color:var(--muted);margin:18px 0 0;max-width:46ch}
+.role strong{color:var(--ink);font-weight:600}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:15px;padding:12px 20px;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+.btn.primary{background:var(--coral);border-color:var(--coral);color:#140A06}
+.btn:hover{transform:translateY(-1px)}
+
+.idcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:grid;gap:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+.idcard .top{display:flex;justify-content:space-between;align-items:center}
+.spark{width:100%;height:auto;display:block}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat{background:var(--bg2);border-radius:12px;padding:12px}
+.stat b{display:block;font-family:var(--f-display);font-size:22px;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted);line-height:1.3;display:block}
+.stat:nth-child(1) b{color:var(--teal)}.stat:nth-child(2) b{color:var(--amber)}.stat:nth-child(3) b{color:var(--coral)}
+
+/* Section shell */
+section{padding-block:72px 8px}
+.sh{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+h2{font-size:clamp(30px,4.5vw,48px);font-weight:700}
+h2 em{font-style:normal;color:var(--teal)}
+
+/* Skills */
+.cad{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.viewport{position:relative;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/28px 28px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/28px 28px, var(--bg2);min-height:340px}
+.viewport canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+.viewport canvas:active{cursor:grabbing}
+.vp-hud{position:absolute;left:14px;right:14px;top:12px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;z-index:1;pointer-events:none}
+.vp-hud span{background:color-mix(in srgb,var(--bg) 70%,transparent);padding:3px 8px;border-radius:6px}
+.vp-axes{position:absolute;left:14px;bottom:12px;z-index:1;pointer-events:none}
+.cad-info{padding:28px;display:grid;gap:18px;align-content:center}
+.cad-info h3{font-size:24px;color:var(--coral)}
+.cad-info p{margin:0;color:var(--muted)}
+.tools{display:grid;gap:10px}
+.tool{display:flex;align-items:center;gap:14px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
+.tool .ico{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:13px;flex:none}
+.tool[data-t="sw"] .ico{background:color-mix(in srgb,var(--coral) 22%,transparent);color:var(--coral)}
+.tool[data-t="inv"] .ico{background:color-mix(in srgb,var(--amber) 22%,transparent);color:var(--amber)}
+.tool[data-t="f360"] .ico{background:color-mix(in srgb,var(--teal) 22%,transparent);color:var(--teal)}
+.tool b{display:block;font-size:16px}
+.tool small{color:var(--muted);font-size:13px}
+.tool[aria-pressed="true"]{border-color:var(--coral);background:color-mix(in srgb,var(--coral) 10%,var(--bg2))}
+
+.skillgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:16px}
+.sk{--c:var(--teal);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:grid;gap:12px;align-content:start;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.sk:hover{transform:translateY(-3px);border-color:var(--c)}
+.sk::after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;background:var(--c);opacity:.12;right:-50px;top:-50px}
+.sk .n{font-family:var(--f-mono);font-size:12px;color:var(--c)}
+.sk h3{font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:13px;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--ink);border:1px solid color-mix(in srgb,var(--c) 35%,transparent)}
+.sk.t{--c:var(--teal)}.sk.a{--c:var(--amber)}.sk.v{--c:var(--violet)}.sk.l{--c:var(--lime)}
+
+/* Experience */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.job{--c:var(--teal);display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;border-left:4px solid var(--c)}
+.job .when{font-family:var(--f-mono);font-size:13px;color:var(--c);font-variant-numeric:tabular-nums}
+.job .where{font-size:14px;color:var(--muted);margin-top:4px}
+.job h3{font-size:20px;margin-bottom:8px}
+.job ul{margin:0;padding-left:1.1em;display:grid;gap:4px;color:var(--muted)}
+.job:nth-child(2){--c:var(--coral)}.job:nth-child(3){--c:var(--lime)}.job:nth-child(4){--c:var(--violet)}
+
+/* Projects */
+.pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;grid-auto-flow:row dense}
+.proj.full{grid-column:1/-1}
+.proj{--c:var(--amber);border-radius:24px;padding:26px;display:grid;gap:12px;align-content:start;background:
+  radial-gradient(120% 90% at 100% 0%,color-mix(in srgb,var(--c) 22%,transparent),transparent 60%),var(--card);border:1px solid var(--line)}
+.proj .tag{justify-self:start;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);border:1px solid var(--c);padding:3px 10px;border-radius:999px}
+.proj h3{font-size:22px}
+.proj p{margin:0;color:var(--muted)}
+.big{display:flex;align-items:baseline;gap:12px;margin-top:6px}
+.big b{font-family:var(--f-display);font-size:38px;color:var(--c);font-variant-numeric:tabular-nums;line-height:1}
+.big span{font-size:13px;color:var(--muted)}
+.proj:nth-child(2){--c:var(--violet)}.proj:nth-child(3){--c:var(--teal)}.proj:nth-child(4){--c:var(--coral)}
+
+.shot{margin:4px 0 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#FFFFFF}
+.shot img{display:block;width:100%;height:auto}
+.shot.small img{max-width:300px;margin:0 auto}
+.shot figcaption{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#55627A;padding:8px 12px;border-top:1px solid #D5DDEB;background:#F5F7FC}
+.proj.wide{grid-column:1/-1;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px;align-items:center}
+@media (max-width:620px){.proj.wide{grid-template-columns:minmax(0,1fr)}}
+
+.proj.hmi{grid-column:1/-1}
+.proj.hmi p{max-width:80ch}
+.hmi-gal{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.4fr) minmax(0,1fr);gap:12px;margin-top:6px}
+.hmi-gal figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg2);display:flex;flex-direction:column}
+.hmi-gal img{display:block;width:100%;height:340px;object-fit:cover;max-width:100%}
+.hmi-gal .lv img{object-fit:contain;background:#FFFFFF}
+.hmi-gal figcaption{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 12px}
+@media (max-width:760px){.hmi-gal{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hmi-gal .lv{grid-column:1/-1}.hmi-gal img{height:260px}}
+@media (max-width:480px){.hmi-gal{grid-template-columns:minmax(0,1fr)}.hmi-gal img{height:auto;max-height:420px}}
+
+/* Edu + awards */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:16px;align-content:start}
+.deg h3{font-size:18px}
+.deg p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.deg .g{font-family:var(--f-mono);font-size:13px;color:var(--teal);margin-top:6px}
+.aw{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.aw li{display:flex;gap:12px;align-items:flex-start}
+.aw li i{flex:none;width:10px;height:10px;border-radius:3px;margin-top:8px;background:var(--amber)}
+.aw li:nth-child(2) i{background:var(--teal)}.aw li:nth-child(3) i{background:var(--coral)}.aw li:nth-child(4) i{background:var(--violet)}.aw li:nth-child(5) i{background:var(--lime)}
+
+/* Contact */
+.contact{border-radius:28px;padding:40px clamp(20px,4vw,48px);background:
+  radial-gradient(60% 120% at 0% 0%,color-mix(in srgb,var(--teal) 30%,transparent),transparent 60%),
+  radial-gradient(60% 120% at 100% 100%,color-mix(in srgb,var(--coral) 30%,transparent),transparent 60%),var(--card);border:1px solid var(--line)}
+.contact h2{margin-bottom:10px}
+.contact > p{color:var(--muted);margin:0 0 28px;max-width:56ch}
+.cgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.cc{background:color-mix(in srgb,var(--bg) 60%,transparent);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:6px;min-width:0}
+.cc .v{font-weight:600;overflow-wrap:anywhere;user-select:all}
+.cc button,.cc a.go{justify-self:start;font:inherit;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:none;border:0;padding:0;color:var(--teal);cursor:pointer;text-decoration:none}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:28px}
+
+@media (max-width:900px){
+  .hero,.cad{grid-template-columns:minmax(0,1fr)}
+  .skillgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:620px){
+  .skillgrid,.pgrid,.two,.cgrid{grid-template-columns:minmax(0,1fr)}
+  .job{grid-template-columns:minmax(0,1fr);gap:8px}
+  nav ul{display:none}
+  .hero{padding-block:32px 40px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+<nav>
+  <a class="logo" href="#top">aakash<span>.</span>suresh</a>
+  <ul>
+    <li><a class="nl" href="#skills">Skills</a></li>
+    <li><a class="nl" href="#experience">Experience</a></li>
+    <li><a class="nl" href="#projects">Projects</a></li>
+    <li><a class="nl" href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div>
+    <span class="status"><b></b>Open to medical device roles · Freiburg, Germany</span>
+    <h1>Medical Device <span class="grad">Engineer</span></h1>
+    <p class="role">I'm <strong>Aakash Suresh</strong>, a medical device engineer working across <strong>3D CAD design, prototyping, bench testing and biomedical instrumentation</strong>. M.Sc. Microsystems Engineering at the University of Freiburg; thesis at the University of Basel.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact">Get in touch →</a>
+      <a class="btn" href="https://www.linkedin.com/in/aakash-suresh-310b8a249/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+
+  <aside class="idcard" aria-label="Highlights">
+    <div class="top"><span class="mono">CH1 · ECG trace</span><span class="mono">25 mm/s</span></div>
+    <svg class="spark" viewBox="0 0 400 110" aria-hidden="true">
+      <defs><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="var(--teal)"/><stop offset=".55" stop-color="var(--amber)"/><stop offset="1" stop-color="var(--coral)"/></linearGradient></defs>
+      <path fill="none" stroke="url(#sg)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
+        d="M0 70 H40 l8 -6 l8 6 H76 l6 4 l9 -58 l9 76 l7 -22 H128 l14 -10 l14 10 H180 l8 -6 l8 6 H216 l6 4 l9 -58 l9 76 l7 -22 H268 l14 -10 l14 10 H320 l8 -6 l8 6 H356 l6 4 l9 -58 l9 76 l7 -22 H400"/>
+    </svg>
+    <div class="stats">
+      <div class="stat"><b>≈90%</b><span>clinical reference agreement</span></div>
+      <div class="stat"><b>1</b><span>design patent granted</span></div>
+      <div class="stat"><b>9.22</b><span>B.E. CGPA out of 10</span></div>
+    </div>
+  </aside>
+</header>
+
+<section id="skills">
+  <div class="sh"><h2>Skills, <em>in 3D</em></h2><span class="mono">Drag the part to rotate</span></div>
+
+  <div class="cad">
+    <div class="viewport">
+      <div class="vp-hud"><span class="mono" id="vp-tool">SolidWorks · Part1.SLDPRT</span><span class="mono">Wireframe</span></div>
+      <canvas id="cad" aria-label="Rotating wireframe of a gear, drawn like a CAD viewport"></canvas>
+      <svg class="vp-axes" width="54" height="54" viewBox="0 0 54 54" aria-hidden="true">
+        <line x1="10" y1="44" x2="44" y2="44" stroke="var(--coral)" stroke-width="2"/><text x="46" y="47" font-size="10" fill="var(--coral)" font-family="JetBrains Mono,monospace">X</text>
+        <line x1="10" y1="44" x2="10" y2="10" stroke="var(--lime)" stroke-width="2"/><text x="6" y="8" font-size="10" fill="var(--lime)" font-family="JetBrains Mono,monospace">Y</text>
+        <line x1="10" y1="44" x2="30" y2="26" stroke="var(--teal)" stroke-width="2"/><text x="31" y="24" font-size="10" fill="var(--teal)" font-family="JetBrains Mono,monospace">Z</text>
+      </svg>
+    </div>
+    <div class="cad-info">
+      <span class="mono">01 · Mechanical design</span>
+      <h3>3D CAD &amp; prototyping</h3>
+      <p>Part and assembly modelling for device housings, fixtures and microscale prototype structures, taken through to physical builds and bench tests.</p>
+      <div class="tools" role="group" aria-label="CAD tools">
+        <button class="tool" type="button" data-t="sw" data-file="SolidWorks · Part1.SLDPRT" aria-pressed="true"><span class="ico">SW</span><span><b>SolidWorks</b><small>3D part modelling</small></span></button>
+        <button class="tool" type="button" data-t="inv" data-file="Inventor · Part1.ipt" aria-pressed="false"><span class="ico">INV</span><span><b>Autodesk Inventor</b><small>3D part modelling</small></span></button>
+        <button class="tool" type="button" data-t="f360" data-file="Fusion 360 · Part1.f3d" aria-pressed="false"><span class="ico">F3D</span><span><b>Fusion 360</b><small>Prototype design for lab hardware</small></span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="skillgrid">
+    <article class="sk t"><span class="n">02 · Verification</span><h3>Test &amp; validation</h3>
+      <div class="chips"><span>Bench testing</span><span>Test setups</span><span>Calibration</span><span>Reference measurements</span><span>Characterisation</span></div></article>
+    <article class="sk a"><span class="n">03 · Sensing</span><h3>Biomedical instrumentation</h3>
+      <div class="chips"><span>ECG</span><span>EMG</span><span>EEG</span><span>Analog front-end</span><span>Signal conditioning</span></div></article>
+    <article class="sk v"><span class="n">04 · Firmware</span><h3>Embedded systems</h3>
+      <div class="chips"><span>STM32</span><span>Embedded C</span><span>BLE</span><span>CubeMX / CubeIDE</span><span>Real-time DAQ</span></div></article>
+    <article class="sk l"><span class="n">05 · Fluids &amp; code</span><h3>Fluidics &amp; software</h3>
+      <div class="chips"><span>Microfluidics</span><span>Drop-on-demand</span><span>MATLAB</span><span>Python</span><span>LabVIEW</span><span>Git</span></div></article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sh"><h2>Where I've <em>worked</em></h2><span class="mono">Most recent first</span></div>
+  <ol class="tl">
+    <li class="job">
+      <div><div class="when">Apr 2026 – now</div><div class="where">University of Basel, CH</div></div>
+      <div><h3>Master's Thesis · Smart Dental Bite Block</h3>
+        <ul><li>Developing a compact sensing medical device from concept through prototype to verification.</li>
+        <li>Mechanical and electrical integration of hardware prototypes.</li>
+        <li>Building the bench-test and data-acquisition setup; calibrating against reference measurements.</li></ul></div>
+    </li>
+    <li class="job">
+      <div><div class="when">Mar 2026 – now</div><div class="where">University of Freiburg, DE</div></div>
+      <div><h3>Student Assistant · Neptun Lab</h3>
+        <ul><li>Designing CAD models and physical prototype structures for neuron-on-chip platforms.</li>
+        <li>Assembly, testing, troubleshooting and design optimisation.</li></ul></div>
+    </li>
+    <li class="job">
+      <div><div class="when">Jun 2025 – Mar 2026</div><div class="where">Hahn-Schickard, DE</div></div>
+      <div><h3>Student Research Assistant · Bioprinting &amp; Microfluidics</h3>
+        <ul><li>Calibrated and optimised Hamilton PipJet drop-on-demand dispensing systems.</li>
+        <li>Ran droplet-generation experiments and characterised flow behaviour and stability.</li></ul></div>
+    </li>
+    <li class="job">
+      <div><div class="when">Jun 2025 – Dec 2025</div><div class="where">Hahn-Schickard / FRIZ Lab, DE</div></div>
+      <div><h3>Embedded Systems Developer · Smart Wearable</h3>
+        <ul><li>Refactored STM32 firmware for a wearable physiological monitor.</li>
+        <li>Implemented BLE with encrypted data transfer; optimised real-time acquisition.</li></ul></div>
+    </li>
+  </ol>
+</section>
+
+<section id="projects">
+  <div class="sh"><h2>Selected <em>projects</em></h2><span class="mono">Work samples</span></div>
+  <div class="pgrid">
+    <article class="proj"><span class="tag">Design patent · 2022–24</span><h3>Prenatal Health Monitoring Wearable</h3>
+      <p>Maternal EMG, fetal ECG and accelerometer positioning in one wearable, with low-noise acquisition hardware and LSTM-based labor forecasting. Indian Designs Act, Class 24-01.</p>
+      <div class="big"><b>≈90%</b><span>agreement with clinical reference systems</span></div></article>
+    <article class="proj wide"><div style="display:grid;gap:12px"><span class="tag">CAD · Neptun Lab · 2026</span><h3>Microfluidic Chip for Neuron-on-Chip</h3>
+      <p>Microfluidic chip modelled in Fusion 360 for the neuron-on-chip platform at the University of Freiburg's Neptun Lab, designed for physical prototyping, assembly and testing.</p></div>
+      <figure class="shot"><img src="img/cad-part.png" alt="Fusion 360 model of a long, narrow microfluidic chip with a round port at one end"><figcaption>Microfluidic chip · Fusion 360</figcaption></figure></article>
+    <article class="proj hmi"><span class="tag">HMI · 2025</span><h3>Physiological Signal Robot Control</h3>
+      <p>I built a low-noise analog front-end with differential amplification and filtering to acquire EMG, ECG and EEG, processed the signals in real time in LabVIEW and used them to control a robotic arm. The photos show the acquisition sessions: EMG from surface electrodes on the forearm through a breadboard front-end, and EEG from an electrode cap with a BIOPAC MP35.</p>
+      <div class="hmi-gal">
+        <figure><img src="img/lab-emg.jpg" alt="Aakash seated at a lab bench with surface electrodes on his forearm, wired to a breadboard circuit"><figcaption>EMG acquisition</figcaption></figure>
+        <figure><img src="img/lab-eeg.jpg" alt="EEG recording session with an electrode cap, a BIOPAC MP35 unit and live signal traces on screen"><figcaption>EEG recording · BIOPAC MP35</figcaption></figure>
+        <figure class="lv"><img src="img/hmi-labview.png" alt="LabVIEW front panel with three live signal plots, channel controls and a robotic arm model"><figcaption>LabVIEW control panel</figcaption></figure>
+      </div></article>
+    <article class="proj"><span class="tag">Thesis · 2026</span><h3>Smart Dental Bite Block</h3>
+      <p>A compact intraoral sensing device with its own data-acquisition and calibration setup, taken from prototype to bench verification at the University of Basel.</p></article>
+    <article class="proj full"><span class="tag">Imaging · 2022–23</span><h3>Ultrasound Meconium Detection</h3>
+      <p>MATLAB segmentation and feature-extraction pipeline for prenatal ultrasound, presented at an ISO/IEC 17025 calibration seminar.</p></article>
+  </div>
+</section>
+
+<section>
+  <div class="two">
+    <div class="panel">
+      <span class="mono">Education</span>
+      <div class="deg"><h3>M.Sc. Microsystems Engineering</h3><p>University of Freiburg · Oct 2024 – now</p><p class="g">Grade 2.3 (German scale)</p></div>
+      <div class="deg"><h3>B.E. Electronics &amp; Instrumentation</h3><p>Kumaraguru College of Technology · 2018 – 2024</p><p class="g">CGPA 9.22 / 10 · German 1.5</p></div>
+      <div class="deg"><h3>Languages</h3><p>English C1 · German A2</p></div>
+    </div>
+    <div class="panel">
+      <span class="mono">Recognition</span>
+      <ul class="aw">
+        <li><i></i><span><strong>Winner</strong>, The Inventors Challenge (AICTE, ATAL, ARM Education, STMicroelectronics)</span></li>
+        <li><i></i><span><strong>Finalist</strong>, Ingenium Project Contest, Pragyan 2023, NIT Trichy</span></li>
+        <li><i></i><span><strong>Third Place</strong>, Embed-O-Mania Embedded Systems Competition</span></li>
+        <li><i></i><span>Speaker, ICARD 2024, on labor-pain sensing technologies</span></li>
+        <li><i></i><span>Speaker, All India Seminar on Calibration &amp; Uncertainty (ISO/IEC 17025:2017)</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <span class="mono">Contact</span>
+    <h2>Let's <em>talk</em>.</h2>
+    <p>Hiring for medical device development, test or verification? I'm happy to share more about my thesis work and prototypes.</p>
+    <div class="cgrid">
+      <div class="cc"><span class="mono">Email</span><span class="v" id="c-mail">aakashsuresh0112@gmail.com</span><button type="button" data-copy="c-mail">Copy</button></div>
+      <div class="cc"><span class="mono">Phone</span><span class="v" id="c-tel">+49 1525 5869224</span><button type="button" data-copy="c-tel">Copy</button></div>
+      <div class="cc"><span class="mono">LinkedIn</span><span class="v">aakash-suresh-310b8a249</span><a class="go" href="https://www.linkedin.com/in/aakash-suresh-310b8a249/" target="_blank" rel="noopener">Open profile ↗</a></div>
+      <div class="cc"><span class="mono">Based in</span><span class="v">Freiburg im Breisgau, Germany</span><span class="mono" style="text-transform:none;letter-spacing:0">Open to relocation</span></div>
+    </div>
+  </div>
+  <footer><span class="mono">© 2026 Aakash Suresh</span><span class="mono">Updated Nov 2026</span></footer>
+</section>
+</div>
+
+<script>
+// Copy buttons
+document.querySelectorAll('[data-copy]').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var el=document.getElementById(btn.dataset.copy);var t=el.textContent;
+    var ok=function(){btn.textContent='Copied ✓';setTimeout(function(){btn.textContent='Copy'},1500)};
+    var fb=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected'};
+    try{navigator.clipboard.writeText(t).then(ok,fb)}catch(e){fb()}
+  });
+});
+
+// CAD viewport: wireframe gear
+(function(){
+  var cv=document.getElementById('cad'),ctx=cv.getContext('2d');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var colorVar='--coral';
+  var teeth=12,rO=1,rR=.8,rB=.32,h=.28,pts=[];
+  for(var i=0;i<teeth*4;i++){var a=i/(teeth*4)*Math.PI*2,k=i%4;var r=(k===1||k===2)?rO:rR;pts.push([Math.cos(a)*r,Math.sin(a)*r])}
+  var bore=[];for(var j=0;j<32;j++){var b=j/32*Math.PI*2;bore.push([Math.cos(b)*rB,Math.sin(b)*rB])}
+  var rx=-.55,ry=.4,drag=null;
+  function size(){var d=devicePixelRatio||1,r=cv.getBoundingClientRect();cv.width=r.width*d;cv.height=r.height*d;ctx.setTransform(d,0,0,d,0,0)}
+  function proj(p,z,w,hh){
+    var x=p[0],y=p[1];
+    var cy=Math.cos(ry),sy=Math.sin(ry),cx=Math.cos(rx),sx=Math.sin(rx);
+    var x1=x*cy+z*sy,z1=-x*sy+z*cy;
+    var y1=y*cx-z1*sx,z2=y*cx*0+y*sx+z1*cx;
+    var s=Math.min(w,hh)*.34,f=3.2/(3.2+z2);
+    return [w/2+x1*s*f,hh/2+y1*s*f];
+  }
+  function ring(list,z,w,hh){ctx.beginPath();list.forEach(function(p,i){var q=proj(p,z,w,hh);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])});ctx.closePath();ctx.stroke()}
+  function draw(){
+    var r=cv.getBoundingClientRect(),w=r.width,hh=r.height;
+    ctx.clearRect(0,0,w,hh);
+    var c=getComputedStyle(document.documentElement).getPropertyValue(colorVar).trim()||'#FF7A59';
+    ctx.lineWidth=1.4;ctx.strokeStyle=c;ctx.globalAlpha=.95;
+    ring(pts,h,w,hh);ring(pts,-h,w,hh);
+    ctx.globalAlpha=.6;ring(bore,h,w,hh);ring(bore,-h,w,hh);
+    ctx.globalAlpha=.45;ctx.beginPath();
+    pts.forEach(function(p){var a=proj(p,h,w,hh),b=proj(p,-h,w,hh);ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1])});
+    for(var k=0;k<32;k+=4){var a=proj(bore[k],h,w,hh),b=proj(bore[k],-h,w,hh);ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1])}
+    ctx.stroke();ctx.globalAlpha=1;
+  }
+  function loop(){if(!drag)ry+=.006;draw();requestAnimationFrame(loop)}
+  cv.addEventListener('pointerdown',function(e){drag=[e.clientX,e.clientY,rx,ry];cv.setPointerCapture(e.pointerId)});
+  cv.addEventListener('pointermove',function(e){if(!drag)return;ry=drag[3]+(e.clientX-drag[0])*.01;rx=drag[2]+(e.clientY-drag[1])*.01;if(reduce)draw()});
+  cv.addEventListener('pointerup',function(){drag=null});
+  addEventListener('resize',function(){size();draw()});
+  size();draw();if(!reduce)requestAnimationFrame(loop);
+
+  var map={sw:'--coral',inv:'--amber',f360:'--teal'};
+  document.querySelectorAll('.tool').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.tool').forEach(function(o){o.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');colorVar=map[b.dataset.t];
+      document.getElementById('vp-tool').textContent=b.dataset.file;draw();
+    });
+  });
+})();
+</script>
+
+</body></html>
